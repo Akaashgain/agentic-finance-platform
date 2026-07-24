@@ -1,1 +1,1 @@
-"""Workflow state models."""
+"""Application workflow state."""

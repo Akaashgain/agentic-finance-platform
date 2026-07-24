@@ -1,1 +1,1 @@
-"""Market data API endpoints."""
+"""Market-data API endpoints."""
