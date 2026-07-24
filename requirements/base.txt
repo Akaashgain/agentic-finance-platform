@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+pydantic-settings
+redis
+psycopg[binary]
+structlog
+dependency-injector
+python-dotenv
