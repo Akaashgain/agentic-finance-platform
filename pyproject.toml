@@ -1,5 +1,9 @@
 [project]
 name = "agentic-finance-platform"
 version = "0.1.0"
-description = "Agentic financial intelligence platform"
-requires-python = ">=3.11"
+description = "Enterprise Agentic Financial Intelligence Platform"
+requires-python = ">=3.13"
+
+authors = [
+    {name = "Akash Gain"}
+]
