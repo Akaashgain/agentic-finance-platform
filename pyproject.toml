@@ -1,0 +1,5 @@
+[project]
+name = "agentic-finance-platform"
+version = "0.1.0"
+description = "Agentic financial intelligence platform"
+requires-python = ">=3.11"
