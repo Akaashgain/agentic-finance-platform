@@ -1,7 +1,9 @@
 from fastapi import APIRouter
-
-router = APIRouter(tags=["Health"])
-
+from src.core.responses import success_response
+router = APIRouter(
+    prefix="/api/v1",
+    tags=["Health"],
+)
 
 @router.get(
     "/health",
