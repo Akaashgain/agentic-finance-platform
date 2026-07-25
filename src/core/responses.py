@@ -1,14 +1,20 @@
-from typing import Any
-from fastapi.responses import JSONResponse
+from typing import Any, Generic, TypeVar
+from pydantic import BaseModel
 
-def success_response(
-    data: Any = None,
-    message: str = "Success",
-):
-    return JSONResponse(
-        content={
-            "success": True,
-            "message": message,
-            "data": data,
-        }
-    )
+T = TypeVar("T")
+
+
+class SuccessResponse(BaseModel, Generic[T]):
+    success: bool = True
+    message: str
+    data: T | None = None
+
+
+class ErrorDetail(BaseModel):
+    code: str
+
+
+class ErrorResponse(BaseModel):
+    success: bool = False
+    message: str
+    error: ErrorDetail

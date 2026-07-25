@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 
+from src.modules.health.router import router as health_router
+
 
 def register_routes(app: FastAPI) -> None:
-    """
-    Register all application routes.
-    """
-    pass
+    app.include_router(health_router)

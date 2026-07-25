@@ -1,6 +1,9 @@
-from dataclasses import dataclass
+class Container:
+    """
+    Dependency Injection Container.
+    """
+
+    pass
 
 
-@dataclass(slots=True)
-class AppContainer:
-    """Container for shared application services."""
+container = Container()
