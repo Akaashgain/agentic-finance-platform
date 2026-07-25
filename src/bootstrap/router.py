@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from src.presentation.api.router import router as api_router
+from src.modules.health.router import router as health_router
 
 
 def register_routes(app: FastAPI) -> None:
-    app.include_router(api_router)
+    app.include_router(health_router)
