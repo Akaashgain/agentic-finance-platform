@@ -1,8 +1,7 @@
-from fastapi import APIRouter
+from fastapi import FastAPI
 
-router = APIRouter(prefix="/health", tags=["health"])
+from src.modules.health.router import router as health_router
 
 
-@router.get("")
-def health_check() -> dict[str, str]:
-    return {"status": "ok"}
+def register_routes(app: FastAPI) -> None:
+    app.include_router(health_router)

@@ -1,7 +1,15 @@
-from src.core.config import get_settings
+# main.py
+import logging
+from src.core.logging import setup_logging
 
-settings = get_settings()
+# 1. Initialize your configuration
+setup_logging(log_level="DEBUG")
 
-print(settings.APP_NAME)
-print(settings.APP_VERSION)
-print(settings.APP_PORT)
+# 2. Get a logger instance for the current module
+logger = logging.getLogger(__name__)
+
+# 3. Emit test messages across different severity levels
+logger.debug("This is a debug message (visible because level is DEBUG)")
+logger.info("Application starting...")
+logger.warning("Something looks slightly off!")
+logger.error("An error occurred!")
