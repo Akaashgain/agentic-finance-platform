@@ -8,3 +8,6 @@ psycopg[binary]
 structlog
 dependency-injector
 python-dotenv
+SQLAlchemy
+asyncpg
+alembic
