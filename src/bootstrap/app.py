@@ -13,6 +13,7 @@ def create_application() -> FastAPI:
     app = FastAPI(
         title=settings.APP_NAME,
         version=settings.APP_VERSION,
+        description="Enterprise Agentic Financial Intelligence Platform",
         lifespan=lifespan,
     )
 

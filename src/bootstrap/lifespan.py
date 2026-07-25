@@ -1,6 +1,5 @@
 import logging
 from contextlib import asynccontextmanager
-
 from fastapi import FastAPI
 
 logger = logging.getLogger(__name__)
@@ -8,6 +7,7 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Application starting...")
+    logger.info("Starting Agentic Finance Platform...")
     yield
-    logger.info("Application shutting down...")
+
+    logger.info("Stopping Agentic Finance Platform...")

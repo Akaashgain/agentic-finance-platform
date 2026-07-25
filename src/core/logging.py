@@ -2,13 +2,13 @@ import logging
 import sys
 
 
-def setup_logging(log_level: str = "INFO") -> None:
+def setup_logging(level: str = "INFO") -> None:
     """
     Configure application logging.
     """
 
     logging.basicConfig(
-        level=log_level,
+        level=level,
         format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
         handlers=[
             logging.StreamHandler(sys.stdout),
