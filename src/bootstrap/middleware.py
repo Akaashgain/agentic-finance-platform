@@ -1,0 +1,3 @@
+allow_origins=[
+    "http://localhost:3000",
+]
