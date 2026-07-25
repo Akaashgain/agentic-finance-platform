@@ -1,5 +1,6 @@
 import logging
 from fastapi import FastAPI, Request
+from src.bootstrap.container import ApplicationContainer
 from src.bootstrap.lifespan import lifespan
 from src.bootstrap.router import register_routes
 from src.core.config import get_settings
@@ -14,10 +15,14 @@ def create_application() -> FastAPI:
     Create and configure the FastAPI application.
     """
 
+    # Load application settings
     settings = get_settings()
 
-    # Configure application logging
+    # Configure logging
     setup_logging(settings.LOG_LEVEL)
+
+    # Initialize Dependency Injection Container
+    container = ApplicationContainer()
 
     # Create FastAPI application
     app = FastAPI(
@@ -26,6 +31,9 @@ def create_application() -> FastAPI:
         description="Enterprise Agentic Financial Intelligence Platform",
         lifespan=lifespan,
     )
+
+    # Attach DI container to application
+    app.container = container
 
     # Register middlewares
     register_middlewares(app)
